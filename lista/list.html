@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Implementación de una cola</title>
+  <meta charset="utf-8"/>  
+</head>
+<body>
+  <h1>Implementación de una lista</h1>
+  Introduce un número: <br/>
+  <input type="text" id="num" value="" placeholder="Entero" onfocus="cleanData ()" />
+  <button id="addButton" onclick="addNumber (document.getElementById ('num').value);">Añade número</button>
+  <button id="addAtButton" onclick="addNumberAtPosition (document.getElementById ('num').value, document.getElementById ('index').value);">Añade número en indice</button>
+  <button id="removeElementButton" onclick="removeByElement (document.getElementById ('num').value);">Elimina numero</button><br/>
+  Introduce un indice(opcional): <br/>
+  <input type="text" id="index" value="" placeholder="Entero" onfocus="cleanData ()" />
+  <button id="removeIndexButton" onclick="removeIndex (document.getElementById ('index').value);">Elimina indice</button>
+  <button id="setNumberButton" onclick="setNumber (document.getElementById ('num').value, document.getElementById ('index').value);">Cambia indice</button>
+  <br/><br/>
+
+
+  <p id="error" style="color:red"></p> 
+  <div id="list">
+  </div>
+  <script src="list.js"></script>
+</body>
+</html>
