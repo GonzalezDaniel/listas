@@ -279,21 +279,14 @@ function removeElement(list,elem){
          throw "The list is Empty. You can't remove any element in it";
 	}
 	else {
-		var found = false;
 		var position = -1;
-		for(var i = 0; i<size(list); i++){
-            if(list[i] === elem){
-				elem = list[i];
-				found = true;
-				position = i;
-			}
-		}
+		position = list.indexOf(elem);
 		if(position !== -1){
 			remove(list, position);
 		}
 		else{throw "The element is not in the list";}
 	}
-	return found;
+	return position;
 }
 
 function set(list, elem, index){
@@ -338,14 +331,14 @@ function set(list, elem, index){
  	console.log ("The first element list: " + firstElement(list));
  	console.log ("The last element list: " + lastElement(list));
 
- 	console.log ("is 40 in list: " + search(list,40));	 	
- 	console.log ("is -40 in list: " + search(list,-40));	 	
+ 	console.log ("is 40 in list: " + indexOf(list,40));	 	
+ 	console.log ("is -40 in list: " + indexOf(list,-40));	 	
  	//clear(list);
 
  	try {
 	 	while (true){
-	 		console.log ("Unnonsumed Element: " + peek(list));
-	 		console.log ("Consumed Element: " + poll(list));
+	 		console.log ("Unnonsumed Element: " + firstElement(list));
+	 		console.log ("Consumed Element: " + remove(list, 0));
 	 		console.log ("The list: " + toString(list));	 	 		 	
 	 	}
  	} catch (err) {
