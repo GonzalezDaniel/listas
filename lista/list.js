@@ -120,6 +120,9 @@ function setNumber(num, index){
 	if (isNaN(elem)) {
 		throw "The element is not a number";
 	}
+	if (index > size(list)) {
+		throw "The index is out of range";
+	}
 	if (!isFull(list)){
 		for(var i = 0; i<size(list)+1; i++){
 			if(i < index){
@@ -148,6 +151,9 @@ function setNumber(num, index){
 	 var elem = 0;
 	 if (isNaN(index)) {
 		throw "The index is not a number";
+	}
+	if (index > size(list)) {
+		throw "The index is out of range";
 	}
  	if (!isEmpty(list)){ 			
  		elem = list[index];
@@ -252,6 +258,9 @@ function setNumber(num, index){
      if (isEmpty(list)){
          throw "The list is Empty. You can't remove any element in it";
 	}
+	if (index > size(list)) {
+		throw "The index is out of range";
+	}
 	else if (!isNaN(list[index])) {
 		for(var i = 0; i<size(list)-1; i++){
 			if(i > index){
@@ -284,7 +293,6 @@ function removeElement(list,elem){
 		if(position !== -1){
 			remove(list, position);
 		}
-		else{throw "The element is not in the list";}
 	}
 	return position;
 }
@@ -296,13 +304,16 @@ function set(list, elem, index){
 	if (isNaN(elem)) {
 		throw "The elem is not a number";
 	}
-	else if (isNaN(index)) {
+	if (isNaN(index)) {
 		throw "The index is not a number";
 	}
-    else if (isEmpty(list)){
+    if (isEmpty(list)){
          throw "The list is Empty. You can't set any element in it";
 	}
-	else if (!isNaN(list[index])) {
+	if (index > size(list)) {
+		throw "The index is out of range";
+	}
+	if (!isNaN(list[index])) {
 		temp = list[index];
 		list[index] = elem;
 	} else {

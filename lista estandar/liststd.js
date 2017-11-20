@@ -17,6 +17,18 @@ function addNumber(num){
  	}	
 }
 
+function addNumberAtPosition(num, index){
+	var error = document.getElementById ("error");
+	var list = document.getElementById ("list");
+	error.innerHTML = "";  
+ 	try {
+	 	addAt(NUMBERS_LIST,num, index);
+	 	list.innerHTML = toString(NUMBERS_LIST);
+ 	} catch (err) {
+ 		error.innerHTML = err;
+ 	}	
+}
+
 function removeIndex(index){
 	var error = document.getElementById ("error");
 	var list = document.getElementById ("list");
@@ -92,6 +104,9 @@ function setNumber(num, index){
 	if (isNaN(elem)) {
 		throw "The element is not a number";
 	}
+	if (index > list.length) {
+		throw "The index is out of range";
+	}
 	if (!isFull(list)){
 		list.splice(index, 0, elem);
 	} else {
@@ -106,10 +121,13 @@ function setNumber(num, index){
 	 if (isNaN(index)) {
 		throw "The index is not a number";
 	}
+	if (index > list.length) {
+		throw "The index is out of range";
+	}
  	if (!isEmpty(list)){ 			
  		elem = list[index];
  	} else {
- 		throw "The list is empty. You can't poll any element";
+ 		throw "The list is empty. You can't get any element";
  	} 	
  	return elem;
  } 
@@ -191,6 +209,9 @@ function setNumber(num, index){
      if (isEmpty(list)){
          throw "The list is Empty. You can't remove any element in it";
 	}
+	if (index > list.length) {
+		throw "The index is out of range";
+	}
 	else if (!isNaN(list[index])) {
 		elem = list[index];
 		list.splice(index, 1);
@@ -216,7 +237,6 @@ function removeElement(list,elem){
 		if(position !== -1){
 			remove(list, position);
 		}
-		else{throw "The element is not in the list";}
 	}
 	return position;
 }
@@ -228,13 +248,16 @@ function set(list, elem, index){
 	if (isNaN(elem)) {
 		throw "The elem is not a number";
 	}
-	else if (isNaN(index)) {
+	if (isNaN(index)) {
 		throw "The index is not a number";
 	}
-    else if (isEmpty(list)){
+    if (isEmpty(list)){
          throw "The list is Empty. You can't set any element in it";
 	}
-	else if (!isNaN(list[index])) {
+	if (index > list.length) {
+		throw "The index is out of range";
+	}
+	if (!isNaN(list[index])) {
 		temp = list[index];
 		list[index] = elem;
 	} else {
@@ -263,15 +286,15 @@ function set(list, elem, index){
  	console.log ("The first element list: " + firstElement(list));
  	console.log ("The last element list: " + lastElement(list));
 
- 	console.log ("is 40 in list: " + search(list,40));	 	
- 	console.log ("is -40 in list: " + search(list,-40));	 	
+ 	console.log ("is 40 in list: " + indexOf(list,40));	 	
+ 	console.log ("is -40 in list: " + indexOf(list,-40));		 	
  	//clear(list);
 
  	try {
 	 	while (true){
-	 		console.log ("Unnonsumed Element: " + peek(list));
-	 		console.log ("Consumed Element: " + poll(list));
-	 		console.log ("The list: " + toString(list));	 	 		 	
+			console.log ("Unnonsumed Element: " + firstElement(list));
+			console.log ("Consumed Element: " + remove(list, 0));
+			console.log ("The list: " + toString(list));	 	 		 	
 	 	}
  	} catch (err) {
  		console.log(err); //When the list is empty, an exception will be catched.

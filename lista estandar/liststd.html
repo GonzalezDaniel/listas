@@ -9,6 +9,7 @@
   Introduce un número: <br/>
   <input type="text" id="num" value="" placeholder="Entero" onfocus="cleanData ()" />
   <button id="addButton" onclick="addNumber (document.getElementById ('num').value);">Añade número</button>
+  <button id="addAtButton" onclick="addNumberAtPosition (document.getElementById ('num').value, document.getElementById ('index').value);">Añade número en indice</button>
   <button id="removeElementButton" onclick="removeByElement (document.getElementById ('num').value);">Elimina numero</button><br/>
   Introduce un indice(opcional): <br/>
   <input type="text" id="index" value="" placeholder="Entero" onfocus="cleanData ()" />
@@ -16,8 +17,6 @@
   <button id="setNumberButton" onclick="setNumber (document.getElementById ('num').value, document.getElementById ('index').value);">Cambia indice</button>
   <br/><br/>
     
-  <button id="addButton" onclick="addNumber (document.getElementById ('num').value);">Añade número</button>
-  <button id="pollButton" onclick="pollNumber ();">Consume número</button>
 
   <p id="error" style="color:red"></p> 
   <div id="list">
