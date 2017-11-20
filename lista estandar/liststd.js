@@ -86,7 +86,6 @@ function setNumber(num, index){
 
  function add(list,elem){
 	 elem = parseInt(elem);
-	 var listTemp = create();
  	if (isNaN(elem)) {
  		throw "The element is not a number";
  	}

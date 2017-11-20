@@ -13,3 +13,6 @@ Se añade el archivo de lista estándar.
 Versión 1.1.1
 Lista estandar terminado.
 Se han añadido mensajes de gestión de errores sobre el archivo de listas.
+
+Versión 1.1.1
+Cambios menores que no afectan al funcionamiento de la aplicación.
