@@ -16,3 +16,6 @@ Se han añadido mensajes de gestión de errores sobre el archivo de listas.
 
 Versión 1.1.1
 Cambios menores que no afectan al funcionamiento de la aplicación.
+
+Versión 1.2.0
+Añadido el fichero "lista ordenada".
