@@ -17,18 +17,6 @@ function addNumber(num){
  	}	
 }
 
-function addNumberAtPosition(num, index){
-	var error = document.getElementById ("error");
-	var list = document.getElementById ("list");
-	error.innerHTML = "";  
- 	try {
-	 	addAt(NUMBERS_LIST,num, index);
-	 	list.innerHTML = toString(NUMBERS_LIST);
- 	} catch (err) {
- 		error.innerHTML = err;
- 	}	
-}
-
 function removeIndex(index){
 	var error = document.getElementById ("error");
 	var list = document.getElementById ("list");
