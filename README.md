@@ -19,3 +19,7 @@ Cambios menores que no afectan al funcionamiento de la aplicación.
 
 Versión 1.2.0
 Añadido el fichero "lista ordenada".
+
+Versión 1.2.1
+Terminado el fichero "lista ordenada".
+Cambios menores en los ficheros .html.
